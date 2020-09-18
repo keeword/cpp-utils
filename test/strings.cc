@@ -1,5 +1,7 @@
 #include "doctest.h"
 
+#ifdef _MSC_VER
+
 #include <windows.h>
 #include <strings.hpp>
 
@@ -9,3 +11,5 @@ TEST_CASE("testing the strings function") {
     CHECK(strings::cast<std::wstring>(std::string{ "test" }) == std::wstring(L"test"));
     CHECK(strings::cast<std::wstring>(std::wstring{ L"test" }) == std::wstring(L"test"));
 }
+
+#endif // _MSC_VER
